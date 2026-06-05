@@ -53,7 +53,7 @@ function setup() {
   triangle(330,110,360,110,345,122);
   arc(358,114,20,40,radians(190),radians(90));
   noStroke();
-  fill(70,50,50);
+  fill(250,100,30);
   beginShape();
   curveVertex(300,220);
   curveVertex(285,230);
@@ -66,7 +66,7 @@ function setup() {
   endShape();
   fill(255,220,200);
   arc(300,230,30,20,radians(0),radians(180));
-  fill(50,30,30);
+  fill(230,70,30);
   quad(240,300,245,350,240,380,235,340);
   quad(360,320,355,350,360,380,365,340);
   fill(255,220,200);
