@@ -11,7 +11,7 @@ let y = 0;
 function draw()
 {
   background(20);
-  if(keyIsDown(13))
+  if(mouseIsPressed)
   {
     if (r === 255)
     {
@@ -146,10 +146,4 @@ function draw()
   arc(300+x,150+y,26,10,radians(190),radians(350));
   line(247+x,142+y,240+x,130+y);
   line(353+x,142+y,360+x,130+y);
-}
-
-function keyPressed()
-{
-  if (key === 's')
-    saveGif('mysketch',10);
 }
