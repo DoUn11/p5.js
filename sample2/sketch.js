@@ -1,0 +1,82 @@
+function setup() {
+  createCanvas(600, 400);
+  background(240);
+  strokeWeight(1);
+  fill(255,220,200);
+  stroke(0,0,0);
+  ellipse(245,145,20,40);
+  ellipse(355,145,20,40);
+  rect(285,200,30,80);
+  noStroke();
+  quad(240,100,360,100,360,140,240,140);
+  
+  fill(255,230,210);
+  stroke(0,0,0);
+  beginShape();
+  curveVertex(240,130);
+  curveVertex(240,140);
+  curveVertex(255,190);
+  curveVertex(292,215);
+  curveVertex(308,215);
+  curveVertex(345,190);
+  curveVertex(360,140);
+  curveVertex(360,130);
+  endShape();
+  
+  fill(90,60,60);
+  arc(335,137,20,25,radians(320),radians(210),OPEN); //eye
+  curve(300,138,320,128,360,130,380,155);
+  curve(300,140,320,130,360,132,380,152);
+  curve(300,140,328,150,342,150,370,145);
+  curve(350,132,359,132,357,140,355,138); 
+  arc(265,137,20,25,radians(320),radians(210),OPEN); //leye
+  curve(300,138,280,128,240,130,220,155);
+  curve(300,140,280,130,240,132,220,152);
+  curve(300,140,272,150,258,150,230,145);
+  curve(250,132,241,132,243,140,245,138);
+  curve(295,145,300,153,300,157,295,160);
+  circle(343,155,2);
+  fill(200,50,50);
+  curve(280,180,290,190,310,190,320,180); //mouth
+  noStroke();
+  fill(255,255,255);
+  circle(258,134,3);
+  circle(268,145,2);
+  circle(327,134,3);
+  circle(339,145,2);
+  fill(60,60,60);
+  arc(300,100,145,120,radians(170),radians(10),OPEN);
+  arc(242,114,20,40,radians(90),radians(350));
+  triangle(245,110,280,110,270,120);
+  triangle(265,110,300,110,285,125);
+  triangle(295,110,340,110,310,115);
+  triangle(330,110,360,110,345,122);
+  arc(358,114,20,40,radians(190),radians(90));
+  noStroke();
+  fill(70,50,50);
+  beginShape();
+  curveVertex(300,220);
+  curveVertex(285,230);
+  curveVertex(200,260);
+  vertex(200,400);
+  vertex(400,400);
+  curveVertex(400,260);
+  curveVertex(315,230);
+  curveVertex(300,220);
+  endShape();
+  fill(255,220,200);
+  arc(300,230,30,20,radians(0),radians(180));
+  fill(50,30,30);
+  quad(240,300,245,350,240,380,235,340);
+  quad(360,320,355,350,360,380,365,340);
+  fill(255,220,200);
+  arc(300,230,30,20,radians(0),radians(180));
+  noFill();
+  stroke(50,30,30);
+  strokeWeight(2);
+  arc(268,145,40,40,radians(350),radians(200));
+  arc(332,145,40,40,radians(340),radians(190));
+  arc(300,150,26,10,radians(190),radians(350));
+  line(247,142,240,130);
+  line(353,142,360,130);
+}
