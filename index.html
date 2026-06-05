@@ -11,215 +11,272 @@
 
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
 
     :root {
-      --bg: #0b0d10;
-      --panel: #11151b;
-      --line: rgba(255,255,255,0.08);
-      --text: #f5f7fa;
-      --accent: #5da9ff;
+    --bg: #0b0d10;
+    --panel: #11151b;
+    --line: rgba(255,255,255,0.08);
+    --text: #f5f7fa;
+    --accent: #5da9ff;
     }
 
     body {
-      background:
+    background:
         radial-gradient(circle at top, rgba(93,169,255,0.12), transparent 30%),
         linear-gradient(to bottom, #0b0d10, #07090c);
 
-      color: var(--text);
+    color: var(--text);
 
-      font-family:
+    font-family:
         "Inter",
         "Pretendard",
         "Noto Sans KR",
         sans-serif;
 
-      min-height: 100vh;
+    min-height: 100vh;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      padding:
+    padding:
         80px
         40px
         120px;
     }
 
+    /* ---------- HERO ---------- */
+
     .hero {
-      width: 100%;
-      max-width: 1280px;
+    width: 100%;
+    max-width: 1280px;
 
-      margin-bottom: 72px;
+    margin-bottom: 72px;
 
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+    }
+
+    .hero-left {
+    display: flex;
+    flex-direction: column;
+    }
+
+    .eyebrow {
+    color: var(--accent);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 4rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1;
+    font-size: clamp(2rem, 4vw, 4rem);
+
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
     }
+
+    /* ---------- PROJECT GRID ---------- */
 
     #projects {
-      width: 100%;
-      max-width: 1280px;
+    width: 100%;
+    max-width: 1280px;
 
-      display: grid;
-      grid-template-columns: repeat(2, 600px);
-      justify-content: center;
+    display: grid;
 
-      gap: 40px;
+    grid-template-columns: repeat(2, 600px);
+
+    justify-content: center;
+
+    gap: 40px;
     }
 
+    /* ---------- PROJECT CARD ---------- */
+
     .cell {
-      width: 600px;
-      height: 400px;
+    width: 600px;
+    height: 400px;
 
-      position: relative;
-      overflow: hidden;
+    position: relative;
+    overflow: hidden;
 
-      background: var(--panel);
+    background: var(--panel);
 
-      border: 1px solid var(--line);
-      border-radius: 20px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
 
-      transition:
+    transition:
         transform 0.35s ease,
         border-color 0.35s ease,
         box-shadow 0.35s ease;
     }
 
     .cell:hover {
-      transform: translateY(-6px);
+    transform: translateY(-6px);
 
-      border-color: rgba(93,169,255,0.4);
+    border-color: rgba(93,169,255,0.4);
 
-      box-shadow:
+    box-shadow:
         0 20px 60px rgba(0,0,0,0.45),
         0 0 30px rgba(93,169,255,0.12);
     }
 
-    .project-wrap { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 14px; 
-    } 
-    
-    .project-text { 
-        font-size: 0.95rem; 
-        font-weight: 600; 
-        letter-spacing: -0.02em; 
-        color: rgba(255,255,255,0.88); 
-        padding-left: 4px; 
+    /* ---------- PROJECT TEXT ---------- */
+
+    .project-label {
+    position: absolute;
+
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    pointer-events: none;
+    }
+
+    .project-index {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: var(--accent);
+    }
+
+    .project-title {
+    font-size: 1rem;
+
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    color: rgba(255,255,255,0.94);
+    }
+
+    /* ---------- IFRAME ---------- */
+
+    iframe {
+    width: 600px;
+    height: 400px;
+
+    border: none;
+
+    background: #000;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 1280px) {
+
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    .cell {
+        width: 100%;
+        max-width: 600px;
     }
 
     iframe {
-      width: 600px;
-      height: 400px;
-      border: none;
-
-      background: #000;
+        width: 100%;
     }
-
-    @media (max-width: 1280px) {
-      #projects {
-        grid-template-columns: 1fr;
-      }
-
-      .cell {
-        width: 100%;
-        max-width: 600px;
-      }
-
-      iframe {
-        width: 100%;
-      }
     }
 
     @media (max-width: 680px) {
-      body {
-        padding: 40px 20px 80px;
-      }
 
-      .cell {
+    body {
+        padding: 40px 20px 80px;
+    }
+
+    .cell {
         height: auto;
         aspect-ratio: 3 / 2;
-      }
+    }
 
-      iframe {
+    iframe {
         height: 100%;
-      }
+    }
     }
   </style>
 </head>
 
 <body>
 
-  <section class="hero">
+    <section class="hero">
 
-    <h1>
-      p5.js<br />
-      Visual Archive
-    </h1>
+    <div class="hero-left">
 
-  </section>
+        <div class="eyebrow">
+        CREATIVE VISUAL PORTFOLIO
+        </div>
+
+        <h1>
+        p5.js<br />
+        Visual Archive
+        </h1>
+
+    </div>
+
+    
+    </section>
 
     <main id="projects">
 
-    <div class="project-wrap">
+    <div class="cell">
 
-        <div class="project-text">
-        Silent Galaxy
+        <div class="project-label">
+        <div class="project-index">PROJECT 01</div>
+        <div class="project-title">Silent Galaxy</div>
         </div>
 
-        <div class="cell">
         <iframe src="sample1/index.html"></iframe>
-        </div>
 
     </div>
 
-    <div class="project-wrap">
+    <div class="cell">
 
-        <div class="project-text">
-        Kinetic Galaxy
+        <div class="project-label">
+        <div class="project-index">PROJECT 02</div>
+        <div class="project-title">Kinetic Galaxy</div>
         </div>
 
-        <div class="cell">
         <iframe src="sample4/index.html"></iframe>
-        </div>
 
     </div>
 
-    <div class="project-wrap">
+    <div class="cell">
 
-        <div class="project-text">
-        Visual Self-Portrait
+        <div class="project-label">
+        <div class="project-index">PROJECT 03</div>
+        <div class="project-title">Visual Self-Portrait</div>
         </div>
 
-        <div class="cell">
         <iframe src="sample2/index.html"></iframe>
-        </div>
 
     </div>
 
-    <div class="project-wrap">
+    <div class="cell">
 
-        <div class="project-text">
-        Responsive Self-Portrait
+        <div class="project-label">
+        <div class="project-index">PROJECT 04</div>
+        <div class="project-title">Responsive Self-Portrait</div>
         </div>
 
-        <div class="cell">
         <iframe src="sample3/index.html"></iframe>
-        </div>
 
     </div>
-
     </main>
 
 </body>
