@@ -10,7 +10,7 @@ let y = 0;
 
 function draw()
 {
-  background(150);
+  background(20);
   if(keyIsDown(13))
   {
     if (r === 255)
