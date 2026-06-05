@@ -1,6 +1,5 @@
 function setup() {
   createCanvas(600, 400);
-  background(240);
 }
 
 let r = 0;
@@ -11,7 +10,7 @@ let y = 0;
 
 function draw()
 {
-  background(250);
+  background(150);
   if(keyIsDown(13))
   {
     if (r === 255)

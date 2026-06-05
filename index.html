@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -22,7 +21,6 @@
       --panel: #11151b;
       --line: rgba(255,255,255,0.08);
       --text: #f5f7fa;
-      --sub: #9ea7b3;
       --accent: #5da9ff;
     }
 
@@ -55,48 +53,17 @@
       width: 100%;
       max-width: 1280px;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-
       margin-bottom: 72px;
 
       border-bottom: 1px solid var(--line);
       padding-bottom: 28px;
     }
 
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
     h1 {
-      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      font-size: clamp(2rem, 4vw, 4rem);
       font-weight: 700;
       letter-spacing: -0.04em;
       line-height: 1;
-    }
-
-    .description {
-      color: var(--sub);
-      font-size: 1rem;
-      line-height: 1.7;
-      max-width: 480px;
-    }
-
-    .hero-right {
-      color: var(--sub);
-      font-size: 0.9rem;
-      text-align: right;
-      line-height: 1.8;
     }
 
     #projects {
@@ -138,29 +105,18 @@
         0 0 30px rgba(93,169,255,0.12);
     }
 
-    .project-label {
-      position: absolute;
-      left: 20px;
-      bottom: 20px;
-
-      z-index: 10;
-
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-
-      pointer-events: none;
-    }
-
-    .project-index {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-    }
-
-    .project-title {
-      font-size: 1.05rem;
-      font-weight: 600;
+    .project-wrap { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 14px; 
+    } 
+    
+    .project-text { 
+        font-size: 0.95rem; 
+        font-weight: 600; 
+        letter-spacing: -0.02em; 
+        color: rgba(255,255,255,0.88); 
+        padding-left: 4px; 
     }
 
     iframe {
@@ -183,16 +139,6 @@
 
       iframe {
         width: 100%;
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
-      }
-
-      .hero-right {
-        text-align: left;
       }
     }
 
@@ -217,80 +163,64 @@
 
   <section class="hero">
 
-    <div class="hero-left">
-
-      <div class="eyebrow">
-        CREATIVE CODING PORTFOLIO
-      </div>
-
-      <h1>
-        p5.js<br />
-        Visual Archive
-      </h1>
-
-      <p class="description">
-        Generative motion graphics, interactive systems,
-        visual experiments, and procedural artworks built with p5.js.
-      </p>
-
-    </div>
-
-    <div class="hero-right">
-      Design Portfolio<br />
-      Creative Developer<br />
-      Interactive Visual Artist
-    </div>
+    <h1>
+      p5.js<br />
+      Visual Archive
+    </h1>
 
   </section>
 
-  <main id="projects">
+    <main id="projects">
 
-    <div class="cell">
+    <div class="project-wrap">
 
-      <div class="project-label">
-        <div class="project-index">PROJECT 01</div>
-        <div class="project-title">Generative Motion</div>
-      </div>
+        <div class="project-text">
+        Silent Galaxy
+        </div>
 
-      <iframe src="sample1/index.html"></iframe>
-
-    </div>
-
-    <div class="cell">
-
-      <div class="project-label">
-        <div class="project-index">PROJECT 02</div>
-        <div class="project-title">Noise Structure</div>
-      </div>
-
-      <iframe src="sample4/index.html"></iframe>
+        <div class="cell">
+        <iframe src="sample1/index.html"></iframe>
+        </div>
 
     </div>
 
-    <div class="cell">
+    <div class="project-wrap">
 
-      <div class="project-label">
-        <div class="project-index">PROJECT 03</div>
-        <div class="project-title">Cyber Visual</div>
-      </div>
+        <div class="project-text">
+        Kinetic Galaxy
+        </div>
 
-      <iframe src="sample2/index.html"></iframe>
-
-    </div>
-
-    <div class="cell">
-
-      <div class="project-label">
-        <div class="project-index">PROJECT 04</div>
-        <div class="project-title">Interactive Form</div>
-      </div>
-
-      <iframe src="sample3/index.html"></iframe>
+        <div class="cell">
+        <iframe src="sample4/index.html"></iframe>
+        </div>
 
     </div>
 
-  </main>
+    <div class="project-wrap">
+
+        <div class="project-text">
+        Visual Self-Portrait
+        </div>
+
+        <div class="cell">
+        <iframe src="sample2/index.html"></iframe>
+        </div>
+
+    </div>
+
+    <div class="project-wrap">
+
+        <div class="project-text">
+        Responsive Self-Portrait
+        </div>
+
+        <div class="cell">
+        <iframe src="sample3/index.html"></iframe>
+        </div>
+
+    </div>
+
+    </main>
 
 </body>
 </html>
-```
