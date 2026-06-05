@@ -1,9 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>p5.js 작품 모음</title>
+
+  <title>Creative Coding Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <style>
     * {
       margin: 0;
@@ -11,72 +17,280 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --bg: #0b0d10;
+      --panel: #11151b;
+      --line: rgba(255,255,255,0.08);
+      --text: #f5f7fa;
+      --sub: #9ea7b3;
+      --accent: #5da9ff;
+    }
+
     body {
+      background:
+        radial-gradient(circle at top, rgba(93,169,255,0.12), transparent 30%),
+        linear-gradient(to bottom, #0b0d10, #07090c);
+
+      color: var(--text);
+
+      font-family:
+        "Inter",
+        "Pretendard",
+        "Noto Sans KR",
+        sans-serif;
+
+      min-height: 100vh;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
-      padding: 24px;
-      background: #f5f5f5;
+
+      padding:
+        80px
+        40px
+        120px;
     }
 
-    h1 {
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-    }
-
-    #projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .hero {
       width: 100%;
-      max-width: 600px;
+      max-width: 1280px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      margin-bottom: 72px;
+
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
       gap: 12px;
     }
 
-    #projects .cell {
-      aspect-ratio: 16 / 9;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
-    #projects .cell iframe {
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .description {
+      color: var(--sub);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .hero-right {
+      color: var(--sub);
+      font-size: 0.9rem;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    #projects {
+      width: 100%;
+      max-width: 1280px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 600px);
+      justify-content: center;
+
+      gap: 40px;
+    }
+
+    .cell {
+      width: 600px;
+      height: 400px;
+
+      position: relative;
+      overflow: hidden;
+
+      background: var(--panel);
+
+      border: 1px solid var(--line);
+      border-radius: 20px;
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .cell:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(93,169,255,0.4);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        0 0 30px rgba(93,169,255,0.12);
+    }
+
+    .project-label {
       position: absolute;
-      top: 0;
-      left: 0;
+      left: 20px;
+      bottom: 20px;
+
+      z-index: 10;
+
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      pointer-events: none;
+    }
+
+    .project-index {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+    }
+
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    iframe {
       width: 600px;
       height: 400px;
       border: none;
-      transform-origin: top left;
-      transform: scale(0.5);
+
+      background: #000;
     }
- 
+
+    @media (max-width: 1280px) {
+      #projects {
+        grid-template-columns: 1fr;
+      }
+
+      .cell {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      iframe {
+        width: 100%;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .hero-right {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 40px 20px 80px;
+      }
+
+      .cell {
+        height: auto;
+        aspect-ratio: 3 / 2;
+      }
+
+      iframe {
+        height: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>나의 p5.js 작품</h1>
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <div class="eyebrow">
+        CREATIVE CODING PORTFOLIO
+      </div>
+
+      <h1>
+        p5.js<br />
+        Visual Archive
+      </h1>
+
+      <p class="description">
+        Generative motion graphics, interactive systems,
+        visual experiments, and procedural artworks built with p5.js.
+      </p>
+
+    </div>
+
+    <div class="hero-right">
+      Design Portfolio<br />
+      Creative Developer<br />
+      Interactive Visual Artist
+    </div>
+
+  </section>
 
   <main id="projects">
 
     <div class="cell">
+
+      <div class="project-label">
+        <div class="project-index">PROJECT 01</div>
+        <div class="project-title">Generative Motion</div>
+      </div>
+
       <iframe src="sample1/index.html"></iframe>
+
     </div>
 
     <div class="cell">
+
+      <div class="project-label">
+        <div class="project-index">PROJECT 02</div>
+        <div class="project-title">Noise Structure</div>
+      </div>
+
       <iframe src="sample4/index.html"></iframe>
+
     </div>
 
     <div class="cell">
+
+      <div class="project-label">
+        <div class="project-index">PROJECT 03</div>
+        <div class="project-title">Cyber Visual</div>
+      </div>
+
       <iframe src="sample2/index.html"></iframe>
+
     </div>
 
     <div class="cell">
+
+      <div class="project-label">
+        <div class="project-index">PROJECT 04</div>
+        <div class="project-title">Interactive Form</div>
+      </div>
+
       <iframe src="sample3/index.html"></iframe>
+
     </div>
 
   </main>
 
 </body>
 </html>
+```
